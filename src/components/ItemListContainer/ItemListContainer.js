@@ -3,7 +3,7 @@ import React from 'react'
 const ItemListContainer = () => {
     return (
         <div>
-            <h1>Proximamente</h1>
+            <h1>Proximamente, muchos Legos</h1>
         </div>
     )
 }
