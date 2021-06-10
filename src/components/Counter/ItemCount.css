@@ -1,0 +1,14 @@
+.counter {
+  width: 300px;
+}
+
+.counterButton {
+  font-size: 30px;
+  color: rgb(40, 40, 114);
+  cursor: pointer;
+}
+
+.counterAmount {
+  flex: 1;
+  font-weight: bold;
+}
