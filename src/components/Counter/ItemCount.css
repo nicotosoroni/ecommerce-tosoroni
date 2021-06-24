@@ -1,9 +1,9 @@
 .counter {
-  width: 300px;
+  width: 100px;
 }
 
 .counterButton {
-  font-size: 30px;
+  font-size: 15px;
   color: rgb(40, 40, 114);
   cursor: pointer;
 }
@@ -11,4 +11,8 @@
 .counterAmount {
   flex: 1;
   font-weight: bold;
+}
+
+.btn {
+  font-size: 10px;
 }
