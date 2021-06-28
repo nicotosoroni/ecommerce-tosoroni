@@ -8,30 +8,35 @@ const ItemList = () => {
     const items = [
       {
         id: 1,
-        nombre: 'producto1',
+        nombre: 'Shipwrecked Pirate',
         detalle: 'Este es el detalle del producto1',
         precio: 100,
+        pictureUrl: 'https://images.brickset.com/sets/images/1733-1.jpg',
         stock: 5,
       },
       {
         id: 2,
-        nombre: 'producto2',
+        nombre: 'Pirate Lookout',
         detalle: 'Este es el detalle del producto2',
         precio: 100,
+        pictureUrl: 'https://images.brickset.com/sets/images/1696-1.jpg',
         stock: 5,
       },
       {
         id: 3,
-        nombre: 'producto3',
+        nombre: 'Treasure Surprise',
         detalle: 'Este es el detalle del producto3',
         precio: 100,
+        pictureUrl: 'https://images.brickset.com/sets/images/1747-1.jpg',
         stock: 5,
       },
       {
         id: 4,
-        nombre: 'producto4',
+        nombre: 'Pirates of Barracuda Bay',
         detalle: 'Este es el detalle del producto4',
         precio: 100,
+        pictureUrl:
+          'https://images.brickset.com/sets/images/21322-1.jpg?202003240103',
         stock: 5,
       },
     ];

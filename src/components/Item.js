@@ -7,7 +7,7 @@ const Item = ({ element }) => {
   };
   return (
     <div className="card col-2">
-      <img src="" alt=" " />
+      <img src={element.pictureUrl} height="150" width="150" alt=" " />
       <div>
         <h5>{element.nombre}</h5>
         <p>{element.detalle}</p>
