@@ -1,6 +1,6 @@
 import React from 'react';
-import ItemCount from '../Counter/ItemCount';
-import ItemList from './ItemList/ItemList';
+import ItemCount from './ItemCount';
+import ItemList from './ItemList';
 
 const ItemListContainer = () => {
   const onAdd = (amount) => {
