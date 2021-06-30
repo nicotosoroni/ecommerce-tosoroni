@@ -62,12 +62,4 @@ const ItemList = () => {
   );
 };
 
-// const ItemList = () => {
-//   return (
-//     <div>
-//       <Items />
-//     </div>
-//   );
-// };
-
 export default ItemList;

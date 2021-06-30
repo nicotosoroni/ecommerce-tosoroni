@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ element }) => {
   const [isClicked, setIsClicked] = useState(false);
@@ -21,7 +22,13 @@ const ItemDetail = ({ element }) => {
             <p className="card-text">Precio: {element.price}</p>
           </div>
         </div>
-        <ItemCount stock={element.stock} initial={0} onAdd={onAdd} />
+        {isClicked ? (
+          <Link to="/cart" className="btn btn-primary mt-3">
+            Terminar compra
+          </Link>
+        ) : (
+          <ItemCount stock={element.stock} initial={0} onAdd={onAdd} />
+        )}
       </div>
     </div>
   );

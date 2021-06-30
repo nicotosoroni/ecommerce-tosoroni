@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
+import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
+  const { id } = useParams();
   const [localItems, setLocalItems] = useState([]);
 
   useEffect(() => {
@@ -27,7 +29,7 @@ const ItemDetailContainer = () => {
     getItem(items)
       .then((result) => setLocalItems(result))
       .catch((error) => console.log(error.message));
-  }, []);
+  }, [id]);
 
   return (
     <div className="row productos mt-3">
