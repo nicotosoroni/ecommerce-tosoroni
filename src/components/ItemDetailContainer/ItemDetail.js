@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ItemCount from './ItemCount';
+import ItemCount from '../Cart/ItemCount';
 import { Link } from 'react-router-dom';
 
 const ItemDetail = ({ element }) => {

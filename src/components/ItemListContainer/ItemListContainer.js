@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Item from './Item';
+import ItemList from './ItemList';
 
-const ItemList = () => {
+const ItemListContainer = () => {
   const [localItems, setLocalItems] = useState([]);
 
   useEffect(() => {
@@ -54,12 +54,13 @@ const ItemList = () => {
       .catch((error) => console.log(error.message));
   }, []);
   return (
-    <div className="row productos mt-3">
-      {localItems.map((element) => {
-        return <Item element={element} />;
+    <div>
+      <h1>Tienda LEGO</h1>
+      {localItems.map((localItems) => {
+        return <ItemList localItems={localItems} />;
       })}
     </div>
   );
 };
 
-export default ItemList;
+export default ItemListContainer;
