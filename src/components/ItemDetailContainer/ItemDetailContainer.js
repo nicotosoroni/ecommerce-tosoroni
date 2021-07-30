@@ -1,41 +1,99 @@
 import React, { useEffect, useState } from 'react';
-import ItemDetail from '../ItemDetailContainer/ItemDetail';
+import { ItemDetail } from './ItemDetail';
 import { useParams } from 'react-router-dom';
 
-const ItemDetailContainer = () => {
-  const { id } = useParams();
-  const [localItems, setLocalItems] = useState([]);
+// const ItemDetailContainer = () => {
+//   const { id } = useParams();
+//   const [detailProducto, setLocalItems] = useState([]);
+//   useEffect(() => {
+//     const items =
+
+function ItemDetailContainer() {
+  const [detailProducto, setDetailProducto] = useState([]);
+  const { idItems } = useParams();
+  const promiseDetailProducto = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(
+        () =>
+          resolve([
+            {
+              id: 'uno',
+              nombre: 'Shipwrecked Pirate',
+              detalle: 'Este es el detalle del producto1',
+              precio: 100,
+              type: 'pirate',
+              pictureUrl: 'https://images.brickset.com/sets/images/1733-1.jpg',
+              stock: 5,
+            },
+            {
+              id: 'dos',
+              nombre: 'Pirate Lookout',
+              detalle: 'Este es el detalle del producto2',
+              precio: 100,
+              type: 'pirate',
+              pictureUrl: 'https://images.brickset.com/sets/images/1696-1.jpg',
+              stock: 5,
+            },
+            {
+              id: 'tres',
+              nombre: 'Treasure Surprise',
+              detalle: 'Este es el detalle del producto3',
+              precio: 100,
+              type: 'castle',
+              pictureUrl: 'https://images.brickset.com/sets/images/1747-1.jpg',
+              stock: 5,
+            },
+            {
+              id: 'cuatro',
+              nombre: 'Pirates of Barracuda Bay',
+              detalle: 'Este es el detalle del producto4',
+              precio: 100,
+              type: 'pirate',
+              pictureUrl:
+                'https://images.brickset.com/sets/images/21322-1.jpg?202003240103',
+              stock: 5,
+            },
+          ]),
+        2000
+      );
+    });
+  };
 
   useEffect(() => {
-    const items = {
-      id: 1,
-      title: 'Pirates of Barracuda Bay',
-      description:
-        'Discover the captain’s cabin, food store, kitchen, bedrooms, supply dock, farm, toilet, jail cell, tavern and hidden treasure, plus lots of fun accessories, 8 pirate minifigures, assorted animal figures and 2 skeleton figures to inspire action-packed stories. This set includes an island that can be split in half and rearranged. The shipwreck can also be dismantled and reassembled to make a ship inspired by the Black Seas Barracuda pirate ship LEGO model from 1989.',
-      price: 199.99,
-      pictureUrl:
-        'https://images.brickset.com/sets/images/21322-1.jpg?202003240103',
-      stock: 10,
-    };
-
-    const getItem = (productos) => {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve(productos);
-        }, 2000);
-      });
-    };
-
-    getItem(items)
-      .then((result) => setLocalItems(result))
-      .catch((error) => console.log(error.message));
-  }, [id]);
-
+    promiseDetailProducto().then((detailProducto) => {
+      const dataFiltradaDetail = detailProducto.filter(
+        (element) => element.id === idItems
+      );
+      setDetailProducto(dataFiltradaDetail);
+    });
+  }, [idItems]);
   return (
-    <div className="row productos mt-3">
-      <ItemDetail element={localItems} />
+    <div className="pruebaaa">
+      {detailProducto.map((detailProducto, id) => (
+        <ItemDetail detailProducto={detailProducto} key={id} />
+      ))}
     </div>
   );
-};
+}
+
+//     const getItem = (productos) => {
+//       return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//           resolve(productos);
+//         }, 2000);
+//       });
+//     };
+
+//     getItem(items)
+//       .then((result) => setLocalItems(result))
+//       .catch((error) => console.log(error.message));
+//   }, [id]);
+
+//   return (
+//     <div className="row productos mt-3">
+//       <ItemDetail detailProducto={detailProducto} />
+//     </div>
+//   );
+// };
 
 export default ItemDetailContainer;

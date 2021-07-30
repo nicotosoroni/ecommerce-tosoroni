@@ -7,34 +7,38 @@ const ItemListContainer = () => {
   useEffect(() => {
     const items = [
       {
-        id: 1,
+        id: 'uno',
         nombre: 'Shipwrecked Pirate',
         detalle: 'Este es el detalle del producto1',
         precio: 100,
+        type: 'pirate',
         pictureUrl: 'https://images.brickset.com/sets/images/1733-1.jpg',
         stock: 5,
       },
       {
-        id: 2,
+        id: 'dos',
         nombre: 'Pirate Lookout',
         detalle: 'Este es el detalle del producto2',
         precio: 100,
+        type: 'pirate',
         pictureUrl: 'https://images.brickset.com/sets/images/1696-1.jpg',
         stock: 5,
       },
       {
-        id: 3,
+        id: 'tres',
         nombre: 'Treasure Surprise',
         detalle: 'Este es el detalle del producto3',
         precio: 100,
+        type: 'castle',
         pictureUrl: 'https://images.brickset.com/sets/images/1747-1.jpg',
         stock: 5,
       },
       {
-        id: 4,
+        id: 'cuatro',
         nombre: 'Pirates of Barracuda Bay',
         detalle: 'Este es el detalle del producto4',
         precio: 100,
+        type: 'pirate',
         pictureUrl:
           'https://images.brickset.com/sets/images/21322-1.jpg?202003240103',
         stock: 5,
@@ -56,9 +60,7 @@ const ItemListContainer = () => {
   return (
     <div>
       <h1>Tienda LEGO</h1>
-      {localItems.map((localItems) => {
-        return <ItemList localItems={localItems} />;
-      })}
+      <ItemList localItems={localItems} />
     </div>
   );
 };

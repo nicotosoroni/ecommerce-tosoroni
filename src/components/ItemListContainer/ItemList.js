@@ -4,7 +4,9 @@ import Item from './Item';
 const ItemList = ({ localItems }) => {
   return (
     <div className="row productos mt-3">
-      <Item element={localItems} />;
+      {localItems.map((localItems, id) => {
+        return <Item localItems={localItems} key={id} />;
+      })}
     </div>
   );
 };
