@@ -59,7 +59,7 @@ const ItemListContainer = () => {
   }, []);
   return (
     <div>
-      <h1>Tienda LEGO</h1>
+      <h1>Tienda LEGO!</h1>
       <ItemList localItems={localItems} />
     </div>
   );
