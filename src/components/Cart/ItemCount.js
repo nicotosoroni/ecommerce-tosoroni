@@ -2,24 +2,6 @@ import React, { useState } from 'react';
 import './ItemCount.css';
 import Button from 'react-bootstrap/Button';
 
-// const ItemCount = ({ initial, stock, onAdd }) => {
-//   const [items, setItems] = useState(initial);
-
-//   const addItems = () => {
-//     // console.log(items);
-//     items < stock ? setItems(items + 1) : alert('No hay mas stock');
-//   };
-
-//   const subtractItems = () => {
-//     // console.log(items);
-//     // items < 0 ? setItems(items - 1) : alert("No puede ser menor a 0(cero)")
-//     if (items !== 0) {
-//       setItems(items - 1);
-//     } else {
-//       alert('No puede ser menor a 0(cero)');
-//     }
-//   };
-
 const ItemCount = ({ min, max, producto, onAdd }) => {
   console.log(producto);
   const [minusDisabled, setMinusDisabled] = useState(false);
@@ -74,8 +56,13 @@ const ItemCount = ({ min, max, producto, onAdd }) => {
           id={`${producto.id}Agregar`}
           className="btn btn-secondary w-110"
           onClick={() => onAdd(count)}
+          disabled={
+            producto.stock === 0 || isNaN(producto.stock) ? true : false
+          }
         >
-          Agregar al carrito
+          {producto.stock === 0 || isNaN(producto.stock)
+            ? 'SIN STOCK'
+            : 'AGREGAR AL CARRITO'}
         </button>
       </div>
     </div>

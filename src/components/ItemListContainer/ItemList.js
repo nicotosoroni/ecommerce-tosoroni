@@ -1,14 +1,18 @@
 import React from 'react';
-import Item from './Item';
+import { Item } from './Item';
+import Col from 'react-bootstrap/Col';
 
-const ItemList = ({ localItems }) => {
+export const ItemList = ({ productos }) => {
+  console.log(productos);
   return (
     <div className="row productos mt-3">
-      {localItems.map((localItems, id) => {
-        return <Item localItems={localItems} key={id} />;
+      {productos.map((productos, id) => {
+        return (
+          <Col>
+            <Item producto={productos} key={id} />
+          </Col>
+        );
       })}
     </div>
   );
 };
-
-export default ItemList;

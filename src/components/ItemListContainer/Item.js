@@ -1,20 +1,32 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
-// import Button from 'react-bootstrap/Button';
 
-const Item = ({ localItems }) => {
+export const Item = ({ producto }) => {
+  console.log(producto);
   return (
-    <div className="card col-2">
-      <img src={localItems.pictureUrl} height="150" width="150" alt=" " />
-      <div>
-        <h5>{localItems.nombre}</h5>
-        <p>{localItems.detalle}</p>
-        <p>Precio: {localItems.precio}</p>
-
-        <Link to={`/item/${localItems.id}`}>Detalle</Link>
-      </div>
-    </div>
+    <Card>
+      <Card.Img
+        variant="top"
+        src={producto.pictureUrl}
+        style={{ height: '10rem', width: '10rem' }}
+        className="cardEstilo"
+        width="100"
+      />
+      <Card.Body>
+        <Card.Title className="tituloCard">{producto.nombre}</Card.Title>
+        <Card.Text className="precio">${producto.precio}</Card.Text>
+      </Card.Body>
+      <Card.Footer>
+        <button className="botonVerMas">
+          <Link
+            to={`/item/${producto.nombre}`}
+            className="botonVerMasLink-items"
+          >
+            Ver más
+          </Link>
+        </button>
+      </Card.Footer>
+    </Card>
   );
 };
-
-export default Item;

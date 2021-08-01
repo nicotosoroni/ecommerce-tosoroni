@@ -38,6 +38,7 @@ export const ItemDetail = ({ detailProducto }) => {
           id: detailProducto.id,
           cantidad: count,
           precio: detailProducto.precio,
+          src: detailProducto.pictureUrl,
         },
       ]);
     }
@@ -55,8 +56,8 @@ export const ItemDetail = ({ detailProducto }) => {
     var t = document.getElementById(`${detailProducto.id}Terminar`);
     var a = document.getElementById(`${detailProducto.id}Agregar`);
     if (t.style.display === 'block') t.style.display = 'none';
-    a.style.display = 'block';
-    c.style.display = 'block';
+    a.style.display = 'inline';
+    c.style.display = 'inline';
   };
 
   const styleButton = {
@@ -70,6 +71,7 @@ export const ItemDetail = ({ detailProducto }) => {
           src={detailProducto.pictureUrl}
           className="fotoDetailImg"
           alt="FotoDetail"
+          width="100"
         />{' '}
       </div>
       <div className="infoDetail">
@@ -94,36 +96,22 @@ export const ItemDetail = ({ detailProducto }) => {
             Cancelar
           </Button>{' '}
         </div>
-        <Button variant="outline-info" onClick={(e) => history.push('/list')}>
-          Volver a productos
+        <Button variant="outline-info" onClick={(e) => history.push('/')}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-arrow-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+            />
+          </svg>
         </Button>{' '}
       </div>{' '}
     </div>
-
-    // <div className="card mb-3 itemdetailcontainer">
-    //   <div className="row g-0">
-    //     <div className="col-md-4">
-    //       <img
-    //         src={detailProducto.pictureUrl}
-    //         width="400"
-    //         alt="imagen del producto"
-    //       />
-    //     </div>
-    //     <div class="col-md-8">
-    //       <div class="card-body">
-    //         <h5 className="card-title">{detailProducto.title}</h5>
-    //         <p className="card-text">{detailProducto.description}</p>
-    //         <p className="card-text">Precio: {detailProducto.price}</p>
-    //       </div>
-    //     </div>
-    //     {isClicked ? (
-    //       <Link to="/cart" className="btn btn-primary mt-3">
-    //         Terminar compra
-    //       </Link>
-    //     ) : (
-    //       <ItemCount stock={detailProducto.stock} initial={0} onAdd={onAdd} />
-    //     )}
-    //   </div>
-    // </div>
   );
 };
