@@ -11,7 +11,6 @@ import { CartContext } from '../Cart/CartContext';
 //   setIsClicked(true);
 // };
 export const ItemDetail = ({ detailProducto }) => {
-  console.log(detailProducto);
   const history = useHistory();
   const { productosAgregados, setProductosAgregados } = useContext(CartContext);
 

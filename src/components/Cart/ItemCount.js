@@ -3,7 +3,6 @@ import './ItemCount.css';
 import Button from 'react-bootstrap/Button';
 
 const ItemCount = ({ min, max, producto, onAdd }) => {
-  console.log(producto);
   const [minusDisabled, setMinusDisabled] = useState(false);
   const [addDisabled, setAddDisabled] = useState(false);
   const [count, setCount] = useState(min);

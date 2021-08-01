@@ -13,9 +13,7 @@ function ItemListContainer() {
 
   useEffect(() => {
     const db = getFirestore();
-    console.log(db);
-    const itemCollection = db.collection('productos');
-    console.log(itemCollection);
+    const itemCollection = db.collection('items');
     setLoading(true);
     setTimeout(() => {
       if (
@@ -45,46 +43,6 @@ function ItemListContainer() {
     }, 500);
   }, [categoryId]);
 
-  const items = [
-    {
-      id: 'uno',
-      nombre: 'Shipwrecked Pirate',
-      detalle: 'Este es el detalle del producto1',
-      precio: 100,
-      type: 'pirate',
-      pictureUrl: 'https://images.brickset.com/sets/images/1733-1.jpg',
-      stock: 5,
-    },
-    {
-      id: 'dos',
-      nombre: 'Pirate Lookout',
-      detalle: 'Este es el detalle del producto2',
-      precio: 100,
-      type: 'pirate',
-      pictureUrl: 'https://images.brickset.com/sets/images/1696-1.jpg',
-      stock: 5,
-    },
-    {
-      id: 'tres',
-      nombre: 'Treasure Surprise',
-      detalle: 'Este es el detalle del producto3',
-      precio: 100,
-      type: 'castle',
-      pictureUrl: 'https://images.brickset.com/sets/images/1747-1.jpg',
-      stock: 5,
-    },
-    {
-      id: 'cuatro',
-      nombre: 'Pirates of Barracuda Bay',
-      detalle: 'Este es el detalle del producto4',
-      precio: 100,
-      type: 'pirate',
-      pictureUrl:
-        'https://images.brickset.com/sets/images/21322-1.jpg?202003240103',
-      stock: 5,
-    },
-  ];
-
   return (
     <div>
       {loading ? (
@@ -97,7 +55,7 @@ function ItemListContainer() {
           <Container>
             <Row>
               <CardColumns>
-                <ItemList productos={items} />
+                <ItemList productos={productos} />
               </CardColumns>
             </Row>
           </Container>

@@ -3,7 +3,6 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 export const Item = ({ producto }) => {
-  console.log(producto);
   return (
     <Card>
       <Card.Img

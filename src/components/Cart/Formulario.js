@@ -15,7 +15,7 @@ export const Formulario = ({ totalPrice }) => {
 
   const updateStock = () => {
     const db = getFirestore();
-    const itemCollection = db.collection('productos');
+    const itemCollection = db.collection('items');
     const btc = db.batch();
 
     productosAgregados.forEach((item) => {
@@ -43,7 +43,7 @@ export const Formulario = ({ totalPrice }) => {
       },
       items: productosAgregados.map((item) => ({
         id: item.id,
-        producto: item.titulo,
+        producto: item.nombre,
         precio: item.precio,
         cantidad: item.cantidad,
       })),
