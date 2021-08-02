@@ -53,7 +53,7 @@ export const Formulario = ({ totalPrice }) => {
       .add(newOrder)
       .then(({ id }) => {
         setOrderIds(id);
-        console.log(newId);
+        console.log(id);
       })
       .catch((err) => {
         setError(err);
@@ -123,7 +123,11 @@ export const Formulario = ({ totalPrice }) => {
           placeholder="+54"
           onChange={(event) => setPhone(event.target.value)}
         />
-        <BotonFinalizar email={email} confirmEmail={confirmEmail} />
+        <BotonFinalizar
+          email={email}
+          confirmEmail={confirmEmail}
+          newId={newId}
+        />
       </div>
     </form>
   );
